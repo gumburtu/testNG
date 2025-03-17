@@ -1,14 +1,13 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.security.Key;
 import java.time.Duration;
 
 public class SearchTest {
@@ -29,8 +28,22 @@ public class SearchTest {
         driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("iPhone" + Keys.ENTER);
         WebElement resultSearch = driver.findElement(By.xpath("//*[@id=\"search\"]/span/div/h1/div/div[1]/div/h2/span[1]"));
         Assert.assertTrue(resultSearch.isDisplayed());
+    }
 
+    @Test
+    public void test02() { //aranan iphone urununu sepete ekliyoruz.
+        driver.findElement(By.xpath("//*[@id=\"sp-cc-accept\"]")).click();
+        driver.findElement(By.xpath("//div[@data-index=\"3\"]")).click();
 
+    }
+
+    @Test
+    public void test03() { //urunu sepete ekleme
+        driver.findElement(By.id("add-to-cart-button")).click();
+        driver.findElement(By.xpath("//*[@id=\"attach-warranty-header\"]")).sendKeys(Keys.TAB);
+        driver.findElement(By.xpath("//*[@id=\"a-autoid-2\"]/span/input")).click();
+        WebElement basket = driver.findElement(By.xpath("//*[@id=\"sw-atc-details-single-container\"]"));
+        Assert.assertTrue(basket.isDisplayed());
     }
 
     @AfterClass
