@@ -41,13 +41,15 @@ public class SearchTest {
     public void test03() { //urunu sepete ekleme
         driver.findElement(By.id("add-to-cart-button")).click();
         driver.findElement(By.xpath("//*[@id=\"attach-warranty-header\"]")).sendKeys(Keys.TAB);
-        driver.findElement(By.xpath("//*[@id=\"a-autoid-2\"]/span/input")).click();
+        driver.findElement(By.xpath("//*[@id=\"submit.add-to-cart\"]")).click();
         WebElement basket = driver.findElement(By.xpath("//*[@id=\"sw-atc-details-single-container\"]"));
+        driver.findElement(By.xpath("//*[@id=\"attachSiNoCoverage\"]"));
         Assert.assertTrue(basket.isDisplayed());
     }
 
     @AfterClass
     public void tearDown() {
         driver.quit();
+        driver.close();
     }
 }
