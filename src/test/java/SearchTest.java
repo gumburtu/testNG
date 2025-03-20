@@ -50,6 +50,6 @@ public class SearchTest {
     @AfterClass
     public void tearDown() {
         driver.quit();
-        driver.close(); //action class kapatmasini yazacagiz.
+        driver.close(); //action class kapatmasini yazacagiz.//action class kapatmasini yazacagiz.
     }
 }
