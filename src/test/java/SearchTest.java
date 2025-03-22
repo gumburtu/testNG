@@ -51,5 +51,6 @@ public class SearchTest {
     public void tearDown() {
         driver.quit();
         driver.close(); //action class kapatmasini yazacagiz.//action class kapatmasini yazacagiz.
+        //action class kapatmasini yazacagiz.//action class kapatmasini yazacagiz.
     }
 }
