@@ -9,11 +9,15 @@ import java.time.Duration;
 public class BaseTest {
 
     WebDriver driver;
+    LoginPage loginPage;
+
+
 
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();
-        driver =new ChromeDriver();
+        driver = new ChromeDriver();
+        loginPage = new LoginPage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

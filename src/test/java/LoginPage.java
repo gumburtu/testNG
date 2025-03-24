@@ -2,10 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
-    WebDriver driver;
-    By usernameLocator = By.id("username");
-    By passwordLocator = By.id("password");
-    By submitButtonLocator = By.id("submit");
+    private WebDriver driver;
+    private By usernameLocator = By.id("username");
+    private By passwordLocator = By.id("password");
+    private By submitButtonLocator = By.id("submit");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -19,7 +19,7 @@ public class LoginPage {
         driver.findElement(passwordLocator).sendKeys(password);
     }
 
-    public void clickSubmit() {
+    public void clickSubmitButton() {
         driver.findElement(submitButtonLocator).click();
     }
 }
