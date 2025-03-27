@@ -12,7 +12,6 @@ public class BaseTest {
     LoginPage loginPage;
 
 
-
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();
