@@ -52,5 +52,6 @@ public class SearchTest {
         driver.quit();
         driver.close(); //action class kapatmasini yazacagiz.//action class kapatmasini yazacagiz.
         //action class kapatmasini yazacagiz.//action class kapatmasini yazacagiz.
+        //kapatma
     }
 }
